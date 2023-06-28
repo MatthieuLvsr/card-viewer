@@ -1,3 +1,21 @@
+.card-overlay{
+    background-color: #31063c;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.card-detail{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    color: white;
+}
+
 .card{
 
     --grain: url("../../public/assets/utils/grain.webp");
@@ -16,6 +34,8 @@
     // width: 300px;
     // height: 540px;
     perspective: 300px;
+    opacity: 1;
+    z-index: 1;
 
     .mask{
         position: absolute;

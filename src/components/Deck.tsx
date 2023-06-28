@@ -30,7 +30,7 @@ const Deck = () => {
                 const cars:Car[] = []
                 if(data != null){
                     Array.from(data.cards).forEach(card => {
-                        console.log(card);
+                        // console.log(card);
                         cars.push(card as Car)                        
                     })
                 }
@@ -50,7 +50,7 @@ const Deck = () => {
     return (
         <div className="deck">
             {collection.map((card, index) =>(
-                <Card key={index} name={card.name as string} rarity_index={card.rarity_index} rarity={card.rarity} image_file={card.image_file as string}/>
+                <Card key={index} description={card.description} name={card.name as string} rarity_index={card.rarity_index} rarity={card.rarity} image_file={card.image_file as string}/>
             ))}
         </div>
     )
