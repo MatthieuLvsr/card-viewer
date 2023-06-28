@@ -54,6 +54,7 @@ const Card:React.FC<CardProps> = ({name,rarity,image_file, rarity_index}) => {
   
 
   const options = {
+    scale:1.1,
     speed: 1000,
     max: 30,
     transition:true,
@@ -75,8 +76,8 @@ const Card:React.FC<CardProps> = ({name,rarity,image_file, rarity_index}) => {
   return (
     <div style={{width:CARD_WIDTH,minWidth:CARD_WIDTH}} data-rarity={rarity} ref={cardRef} className='card' onMouseLeave={handleMouseLeave} onMouseMove={handleMouseMove}>
       <img src={`./assets/cards/${image_file}`} alt={name} width={CARD_WIDTH}/>
-      <div className='glare' style={glareStyle}/>
-      <div className='holo shine' style={holoStyles}/>
+      {rarity_index > 0 ? <><div className='glare' style={glareStyle}/>
+      <div className='holo shine' style={holoStyles}/></> : <></>}
       {rarity_index > 1 ? <img className='mask' src={`./assets/masks/${getMask(image_file)}`} width={CARD_WIDTH}/> : <></>}
     </div>
   );
