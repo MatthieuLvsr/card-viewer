@@ -1,4 +1,4 @@
-import React, {useRef, useState, CSSProperties, useEffect, useLayoutEffect} from 'react';
+import React, {useRef, useState, CSSProperties, useEffect} from 'react';
 import "../style/card.scss"
 import VanillaTilt from 'vanilla-tilt';
 import { gsap } from 'gsap';
