@@ -41,3 +41,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Request server
+        run: 
+          curl -X ${{SERVER_ADDRESS}}/release-${{steps.meta.outputs.tags}}
