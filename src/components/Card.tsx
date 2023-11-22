@@ -1,4 +1,4 @@
-import React, {useRef, useState, CSSProperties, useEffect, useLayoutEffect} from 'react';
+import React, {useRef, useState, CSSProperties, useEffect} from 'react';
 import "../style/card.scss"
 import VanillaTilt from 'vanilla-tilt';
 import { gsap } from 'gsap';
@@ -58,17 +58,17 @@ const Card:React.FC<CardProps> = ({name,rarity,image_file, rarity_index, descrip
 
   
 
-  const options = {
-    scale:1.1,
-    speed: 1000,
-    max: 30,
-    transition:true,
-    easing: "cubic-bezier(.03,.98,.52,.99)"
-  };
-  
-  useEffect(() => {
+    
+    useEffect(() => {
+      const options = {
+        scale:1.1,
+        speed: 1000,
+        max: 30,
+        transition:true,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
+      };
     VanillaTilt.init(cardRef.current as HTMLDivElement, options);
-  }, [options]);
+  }, );
 
 
   const getMask = (image:string) => {
@@ -148,7 +148,7 @@ const Card:React.FC<CardProps> = ({name,rarity,image_file, rarity_index, descrip
         <img src={`./assets/cards/${image_file}`} alt={name} width={CARD_WIDTH}/>
         {rarity_index > 0 ? <><div className='glare' style={glareStyle}/>
         <div className='holo shine' style={holoStyles}/></> : <></>}
-        {rarity_index > 1 ? <img className='mask' src={`./assets/masks/${getMask(image_file)}`} width={CARD_WIDTH}/> : <></>}
+        {rarity_index > 1 ? <img alt={name} className='mask' src={`./assets/masks/${getMask(image_file)}`} width={CARD_WIDTH}/> : <></>}
       </div>
       <div style={{width:CARD_WIDTH}} ref={detailRef} className="card-detail">
         <h5>{name}</h5>
