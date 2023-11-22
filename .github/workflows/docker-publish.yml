@@ -44,4 +44,4 @@ jobs:
 
       - name: Request server
         run: 
-          curl -X GET '${{vars.SERVER_ADDRESS}}/release'
+          curl -X GET '${{ vars.SERVER_ADDRESS }}/release'
