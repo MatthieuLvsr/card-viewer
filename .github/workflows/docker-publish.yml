@@ -44,4 +44,4 @@ jobs:
 
       - name: Request server
         run: 
-          curl -X ${{secrets.SERVER_ADDRESS}}/release-${{steps.meta.outputs.tags}}
+          curl -X '${{secrets.SERVER_ADDRESS}}/release-${{steps.meta.outputs.tags}}'
